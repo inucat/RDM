@@ -1,9 +1,12 @@
-
+#import <Cocoa/Cocoa.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <Foundation/Foundation.h>
+#import <IOKit/graphics/IOGraphicsLib.h>
 
 typedef union
 {
 	uint8_t rawData[0xDC];
-	struct 
+	struct
 	{
 		uint32_t mode;
 		uint32_t flags;		// 0x4
@@ -32,4 +35,3 @@ extern "C"
 
 void CopyAllDisplayModes(CGDirectDisplayID display, modes_D4** modes, int* cnt);
 void SetDisplayModeNum(CGDirectDisplayID display, int modeNum);
-
